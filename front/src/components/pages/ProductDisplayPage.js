@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getProductByID } from "../../helpers/products/getProductByID";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faStar } from "@fortawesome/free-solid-svg-icons";
 import { StarsDisplay } from "../star-display/StarsDisplay";
 import { useCart } from "../../hooks/useCart";
 export const ProductDisplayPage = () => {
@@ -21,7 +19,6 @@ export const ProductDisplayPage = () => {
     numReviews: "",
   });
   const {
-    _id,
     name,
     description,
     image,
@@ -33,21 +30,26 @@ export const ProductDisplayPage = () => {
     numReviews,
   } = product;
   useEffect(() => {
-    getProductByID(productID).then((product) => {
-      setProduct(product);
-    });
+    getProductByID(productID)
+      .then((product) => {
+        setProduct(product);
+      })
+      .catch((err) => {
+        alert("Un error ha ocurrido");
+      });
 
     return () => {};
-  }, []);
+  }, [productID]);
   const handleAddItemToCart = () => {
     add(product);
   };
   return (
     <div className="full-wrapper product-display-page__wrapper">
-      <div className="product-display-page__card">
+      <strong className="product-display-page__card">
         <img
           className="product-display-page__card__image"
           src={"http://192.168.1.5:5000/" + image}
+          alt={name}
         />
 
         <h1 className="product-display-page__card__title">{name}</h1>
@@ -91,7 +93,7 @@ export const ProductDisplayPage = () => {
             Add to Cart
           </button>
         )}
-      </div>
+      </strong>
     </div>
   );
 };

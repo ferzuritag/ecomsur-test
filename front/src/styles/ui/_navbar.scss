@@ -12,7 +12,9 @@
   background-color: $header_bg;
   z-index: 1000;
 }
-
+.navbar__wrapper .title {
+  display: none;
+}
 .navbar__wrapper nav ul {
   display: flex;
   flex-direction: row;
@@ -26,4 +28,10 @@
 }
 .navbar__wrapper nav ul li a:hover {
   color: lightgray;
+}
+
+@media screen and (min-width: 350px) {
+  .navbar__wrapper .title {
+    display: block;
+  }
 }

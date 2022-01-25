@@ -1,10 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartPage } from "../components/pages/CartPage";
-import {
-  CatalogScreen,
-  ProductListPage,
-} from "../components/pages/ProductListPage";
+import { ProductListPage } from "../components/pages/ProductListPage";
 import { ProductDisplayPage } from "../components/pages/ProductDisplayPage";
 import { NavBar } from "../components/ui/NavBar";
 

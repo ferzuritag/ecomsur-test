@@ -5,9 +5,13 @@ import { ProductList } from "../products-list/ProductList";
 export const ProductListPage = () => {
   const [products, setProducts] = useState();
   useEffect(() => {
-    getProducts().then((products) => {
-      setProducts(products);
-    });
+    getProducts()
+      .then((products) => {
+        setProducts(products);
+      })
+      .catch((err) => {
+        alert("Ha ocurrido un error");
+      });
 
     return () => {};
   }, []);

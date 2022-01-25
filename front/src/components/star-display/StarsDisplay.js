@@ -6,12 +6,13 @@ export const StarsDisplay = ({ rating }) => {
   const symbols = getStarCountArray(rating);
   return (
     <span>
-      {symbols.map((symbol) => {
+      {symbols.map((symbol, index) => {
         if (symbol === "s") {
-          return <FontAwesomeIcon icon={faStar} />;
+          return <FontAwesomeIcon key={index} icon={faStar} />;
         } else if (symbol === "hs") {
-          return <FontAwesomeIcon icon={faStarHalf} />;
+          return <FontAwesomeIcon key={index} icon={faStarHalf} />;
         }
+        return true;
       })}
       ({rating} out of 5)
     </span>

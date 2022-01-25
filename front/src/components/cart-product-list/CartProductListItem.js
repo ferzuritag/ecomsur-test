@@ -1,10 +1,4 @@
-import {
-  faMinusCircle,
-  faPlus,
-  faPlusCircle,
-  faSearchMinus,
-  faSearchPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useCart } from "../../hooks/useCart";
@@ -29,6 +23,7 @@ export const CartProductListItem = ({
       <img
         className="cart-product-list__list__image"
         src={"http://192.168.1.5:5000" + image}
+        alt={name}
       />
       <span>
         <h1 className="cart-product-list__list__title">{name}</h1>

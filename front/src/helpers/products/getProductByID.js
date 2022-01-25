@@ -1,15 +1,12 @@
 export const getProductByID = async (productID) => {
-  const formData = new FormData();
   try {
-    const url = `http://192.168.1.5:5000/api/products/${productID}`;
+    const url = `${process.env.REACT_APP_API_URL}products/${productID}`;
+    console.log(process.env);
     const resp = await fetch(url);
     const data = await resp.json();
     return data;
   } catch (error) {
-    return {
-      error: true,
-      message: "Ocurrio un error, intente de nuevo",
-      data: [],
-    };
+    console.error(error);
+    throw error;
   }
 };
