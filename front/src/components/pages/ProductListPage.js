@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { getProducts } from "../../helpers/products/getProducts";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../redux/slices/productsSlice";
+import { LoadingScreen } from "../loadingScreen/LoadingScreen";
 import { ProductList } from "../products-list/ProductList";
 
 export const ProductListPage = () => {
-  const [products, setProducts] = useState();
+  const dispatch = useDispatch();
+  const { products, loading } = useSelector((state) => state.productsSlice);
   useEffect(() => {
-    getProducts()
-      .then((products) => {
-        setProducts(products);
-      })
-      .catch((err) => {
-        alert("Ha ocurrido un error");
-      });
-
+    dispatch(fetchProducts());
     return () => {};
-  }, []);
+  }, [dispatch]);
 
+  if (loading) {
+    return <LoadingScreen />;
+  }
   return (
     <div className="full-wrapper catalog-screen__wrapper">
       <h1>Products</h1>

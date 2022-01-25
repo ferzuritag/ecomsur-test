@@ -1,87 +1,71 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProductByID } from "../../helpers/products/getProductByID";
 import { StarsDisplay } from "../star-display/StarsDisplay";
 import { useCart } from "../../hooks/useCart";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductByID } from "../../redux/slices/productsSlice";
+import { LoadingScreen } from "../loadingScreen/LoadingScreen";
+
 export const ProductDisplayPage = () => {
   const { productID } = useParams();
+  const dispatch = useDispatch();
+  const { selectedProduct, loading } = useSelector(
+    (state) => state.productsSlice
+  );
   const { add } = useCart();
-  const [product, setProduct] = useState({
-    _id: "",
-    name: "",
-    description: "",
-    image: "",
-    brand: "",
-    category: "",
-    price: "",
-    countInStock: "",
-    rating: "",
-    numReviews: "",
-  });
-  const {
-    name,
-    description,
-    image,
-    brand,
-    category,
-    price,
-    countInStock,
-    rating,
-    numReviews,
-  } = product;
-  useEffect(() => {
-    getProductByID(productID)
-      .then((product) => {
-        setProduct(product);
-      })
-      .catch((err) => {
-        alert("Un error ha ocurrido");
-      });
 
+  useEffect(() => {
+    dispatch(fetchProductByID(productID));
     return () => {};
-  }, [productID]);
+  }, [dispatch, productID]);
+
   const handleAddItemToCart = () => {
-    add(product);
+    add(selectedProduct);
   };
+  if (loading) {
+    return <LoadingScreen />;
+  }
   return (
     <div className="full-wrapper product-display-page__wrapper">
       <strong className="product-display-page__card">
         <img
           className="product-display-page__card__image"
-          src={"http://192.168.1.5:5000/" + image}
-          alt={name}
+          src={"http://192.168.1.5:5000/" + selectedProduct.image}
+          alt={selectedProduct.name}
         />
 
-        <h1 className="product-display-page__card__title">{name}</h1>
+        <h1 className="product-display-page__card__title">
+          {selectedProduct.name}
+        </h1>
         <main>
           <h2 className="product-display-page__card__subtitle">
-            Category: {category}
+            Category: {selectedProduct.category}
           </h2>
           <h2 className="product-display-page__card__subtitle">
-            Brand: {brand}
+            Brand: {selectedProduct.brand}
           </h2>
           <span>
             <h2 className="product-display-page__card__subtitle">
               Description:
             </h2>
-            {description}
+            {selectedProduct.description}
           </span>
           <h2 className="product-display-page__card__subtitle">
-            Price: ${price}
+            Price: ${selectedProduct.price}
           </h2>
           <span>
             <h4>Rating: </h4>
-            <StarsDisplay rating={rating} />
+            <StarsDisplay rating={selectedProduct.rating} />
           </span>
           <span>
-            <h4>Number of Reviews: {numReviews}</h4>
+            <h4>Number of Reviews: {selectedProduct.numReviews}</h4>
           </span>
         </main>
 
-        {countInStock === 0 ? (
+        {selectedProduct.countInStock === 0 ? (
           <button
             className="product-display-page__card__button btn-add-to-cart"
-            disabled="true"
+            disabled
           >
             Out of Stock
           </button>
