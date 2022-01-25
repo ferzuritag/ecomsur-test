@@ -1,0 +1,40 @@
+@import "./ui/navbar";
+@import "./components/product-list";
+@import "./screens/product-list-page";
+@import "./screens/product-display-page";
+@import "./components/cart-product-list";
+@import "./screens/cart-page";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.full-wrapper {
+  margin-top: 60px;
+  padding: 20px 5%;
+  width: 100vw;
+  min-height: calc(100vh - 60px);
+  background-color: $background_bg;
+}
+
+//buttons
+.btn-add-to-cart {
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: $header_bg;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-add-to-cart:disabled {
+  cursor: default;
+  background-color: lighten($color: $header_bg, $amount: 10%);
+}
+.btn-add-to-cart:disabled:hover {
+  background-color: lighten($color: $header_bg, $amount: 10%);
+}
+.btn-add-to-cart:hover {
+  background-color: lighten($color: $header_bg, $amount: 10%);
+}

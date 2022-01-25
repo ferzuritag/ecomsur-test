@@ -1,0 +1,51 @@
+@import "../colors";
+.product_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.product_list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90vw;
+  line-height: 1.5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 1px 12px 0px rgba(51, 51, 51, 0.75);
+}
+
+.product_list__item__brand-category {
+  height: 15px;
+  font-size: 0.7rem;
+  color: gray;
+}
+.product_list__item__title {
+  width: 280px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}
+.product_list__item__description {
+  height: 100px;
+
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product_list__item__img {
+  width: 100%;
+  height: 200px;
+}
+.product_list__item main {
+  margin: 0px 10px;
+}
+
+@media screen and(min-width:350px) {
+  .product_list__item {
+    width: 300px;
+  }
+}
