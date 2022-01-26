@@ -1,13 +1,10 @@
-# Bitacora de Prueba tecnica Front Ecomsur 2021 Luis Fernando Zurita Gonzalez
-
-  - [Requerimientos mínimos](#requerimientos-mínimos)
-  - [Instalar y Correr la aplicación](#instalar-y-correr-la-aplicación)
+# Bitácora de prueba técnica Front-End
 
 ## Requerimientos mínimos
 
 - Node 14.15.0
 
-## Instalar y Correr la aplicación
+## Instalación
 
 Instalar API (backend) y la aplicacion React (front):
 
@@ -15,7 +12,7 @@ Instalar API (backend) y la aplicacion React (front):
    `npm install`
 2. Navega al directorio `front` y vuelve a correr el comando:
    `npm install`
-3. Renombrar el archivo .env.example a .env, por defecto funcionara bien, pero si quieres verlo a traves de un celular en la red local averigua tu direccion IP y sustituyela por localhost.
+3. En el directorio front renombrar el archivo .env.example a .env, por defecto funcionara bien, pero si quieres verlo desde otro dispositivo en la red local averigua tu direccion IP y sustituyela por localhost.
 
 4. Regresa al directorio root `cd ..`.
 
@@ -24,74 +21,54 @@ La aplicación está compuesta de un servidor Express y una instalación básica
 Esto correrá ambas aplicaciones (Express y CRA) al mismo tiempo.
 
 
-## DOCUMENTACION
+## DEPENDENCIAS
 
-### DEPENDENCIAS
-
-#### FontAwesome
-- Se utlilizaron estos paquetes para extraer iconos, y hacer el display de estrellas de los productos.
+#### FontAwesome:
+Se utlilizó este conjunto de paquetes para extraer iconos, y hacer el display de estrellas de los productos.
 #### react-router-dom v6
-Se utilizo este paquete para asignar las rutas de nuestras pantallas
+Se utilizó este paquete para asignar las rutas de nuestras pantallas.
 #### Redux React-Redux ReduxToolkit
- Se utlilizaron estos paquetes para manejar el estado global de la aplicacion y asi
-  mantener el carrito de compras durante todas las pantallas, ademas se utilizo react-redux para
-  poder usar los hooks e integrarlo con react, tambien se uso el set de herramientas RTK que sirve
-  para potenciar el uso de redux ya que facilita su configuracion, nos ayuda a poder configurar nuestros
-  reducers y actions en un solo archivo y evitar el codigo repetitivo que hacemos con redux.
+ Se utilizaron estos paquetes para manejar el estado global de la aplicación y así
+  mantener el carrito de compras durante todas las pantallas, ademas se utilizó react-redux para
+  poder usar los hooks e integrarlo con react, también se usó el set de herramientas RTK que sirve
+  para potenciar el uso de redux ya que facilita su configuración, nos ayuda a poder configurar nuestros
+  reducers y actions en un solo archivo y evita el código repetitivo que hacemos con redux.
 #### SASS
- Se utlizo el preprocesador sass para poder seccionar nuestro css.
+ Se utilizó el preprocesador sass para poder seccionar nuestro css asi como agregar variables y usar sus funciones para colores.
 
-### ESTRUCTURA DEL PROYECTO
+## ESTRUCTURA DE LAS CARPETAS
 
-- Dentro de la carpeta src se encuentra nuestro codigo fuente.
+- ***src:***
+  Dentro de la carpeta src se encuentra nuestro código fuente.
 
-  ## components
-  En esta carpeta se encuentran todos nuestros componentes de react, dentro de esta se encuentra una 
+- ***components:*** En esta carpeta se encuentran todos nuestros componentes de react, dentro de esta se encuentra una 
   carpeta especial llamada pages, que mostrara las pantallas finales, las demas carpetas son componentes mas
   pequeños.
 
-  ## helpers
-  Dentro de la carpeta helpers se encuentran funciones hechas por nosotros, sean de mera ayuda o llamadas a endpoints.
+- ***helpers:*** Dentro de la carpeta helpers se encuentran funciones hechas por nosotros, sean de mera ayuda o llamadas a endpoints.
 
-  ## hooks
-
-  Aqui se guardan todos los custom hooks.
-
-  ## redux
-
-  En esta carpeta se hacen las configuraciones del store en donde estaran alojados los datos de nuestra aplicacion y las slices en donde gracias a RTK
+ - ***hooks:*** Aqui se guardan todos los custom hooks.
+ - ***redux*** En esta carpeta se hacen las configuraciones del store en donde estarán alojados los datos de nuestra aplicacion y las slices en donde gracias a RTK
   estan configuradas las acciones junto con los reducers.
 
-  ## styles
+- ***components:*** En esta carpeta se encuentran todos nuestros partials y nuestro archivo principal de SASS, esta dividido entre estilos de las paginas (pages) , componentes, componentes UI y un archivo de configuración de colores.
 
-  En esta carpeta se encuentan todos nuestros partials y nuestro archivo principal de SASS, esta dividido entre estilos de las paginas (pages) , componentes, componentes UI y un archivo de configuracion de colores.
-
-### ACCIONES EN lOS REDUCERS
+## ACCIONES DE LOS REDUCERS
 
 #### cartSlice
- - addPoduct
-
-  Agrega un producto al carrito, si ya hay una instancia de este producto agrega uno a su contador, si rebasa el stock, muestra
+ - addPoduct: Agrega un producto al carrito, si ya hay una instancia de este producto agrega uno a su contador, si rebasa el stock, muestra
   una alerta.
 
   
- - removePoduct 
-
- Elimina 1 elemento del carrito, si este tiene mas instancias descuenta la cantidad 1 unidad, si el contador llega a 0 se remueve el producto del carrito 
+ - removePoduct: Elimina 1 elemento del carrito, si este tiene mas instancias, descuenta la cantidad 1 unidad, si el contador llega a 0 se remueve el producto del carrito 
 
  #### productSlice
- - fetchProducts
-
-  Realiza una peticion asincrona para recuperar todos los productos y cambia el estados a su respectivo estado del fetching (cargando y no cargando)
+ - fetchProducts: Realiza una petición asíncrona para recuperar todos los productos y cambia el estado a su respectivo estado del fetching (cargando y no cargando)
 
   
- - fetchProductByID 
-
- Realiza una peticion asincrona para recuperar un productos por ID y cambia el estados a su respectivo estado del fetching (cargando y no cargando)
+ - fetchProductByID: Realiza una petición asíncrona para recuperar un productos por ID y cambia el estado a su respectivo estado del fetching (cargando y no cargando)
 
  
-
-
 
 
 
