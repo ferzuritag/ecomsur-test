@@ -72,10 +72,7 @@ export const ProductDisplayPage = () => {
             Out of Stock
           </button>
         ) : (
-          <button
-            className="product-display-page__card__button btn-add-to-cart"
-            onClick={handleAddItemToCart}
-          >
+          <button className="btn-add-to-cart" onClick={handleAddItemToCart}>
             Add to Cart
           </button>
         )}
