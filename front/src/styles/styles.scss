@@ -36,14 +36,14 @@
   box-sizing: border-box;
   background-color: $header_bg;
   transition: background-color 0.3s ease-in-out;
-}
-.btn-add-to-cart:disabled {
-  cursor: default;
-  background-color: lighten($color: $header_bg, $amount: 10%);
-}
-.btn-add-to-cart:disabled:hover {
-  background-color: lighten($color: $header_bg, $amount: 10%);
-}
-.btn-add-to-cart:hover {
-  background-color: lighten($color: $header_bg, $amount: 10%);
+  &:disabled:hover {
+    background-color: gray;
+  }
+  &:disabled {
+    cursor: default;
+    background-color: gray;
+  }
+  &:hover {
+    background-color: lighten($color: $header_bg, $amount: 10%);
+  }
 }

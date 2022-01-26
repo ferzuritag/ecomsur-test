@@ -8,9 +8,9 @@
   display: flex;
   flex-direction: column;
   line-height: 2;
-}
-.cart-product-list__list__item > span {
-  margin: 10px;
+  span {
+    margin: 10px;
+  }
 }
 .cart-product-list__list__image {
   width: 100%;
@@ -42,7 +42,13 @@
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  &:hover {
+    background-color: gray;
+  }
 }
-.cart-product-list__list__amount-wrapper__button:hover {
-  background-color: gray;
+
+@media screen and(min-width:600px) {
+  .cart-product-list__list__item {
+    width: 350px;
+  }
 }
