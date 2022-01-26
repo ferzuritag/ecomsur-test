@@ -12,9 +12,7 @@ Instalar API (backend) y la aplicacion React (front):
    `npm install`
 2. Navega al directorio `front` y vuelve a correr el comando:
    `npm install`
-3. En el directorio front renombrar el archivo .env.example a .env, por defecto funcionara bien, pero si quieres verlo desde otro dispositivo en la red local averigua tu direccion IP y sustituyela por localhost.
-
-4. Regresa al directorio root `cd ..`.
+3. Regresa al directorio root `cd ..`.
 
 La aplicación está compuesta de un servidor Express y una instalación básica de Create-React-App (CRA). Todo está configurado para correr con un solo comando.
 `npm run dev`
