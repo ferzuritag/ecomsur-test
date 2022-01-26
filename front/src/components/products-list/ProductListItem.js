@@ -42,7 +42,7 @@ export const ProductListItem = ({
         <Link to={`/products/${_id}`}>
           <h1 className="product_list__item__title">{name}</h1>
         </Link>
-        <p className="product_list__item__description">{description}</p>
+        <h2 className="product_list__item__description">{description}</h2>
         <h2>${price}</h2>
         <span>
           <StarsDisplay rating={rating} />

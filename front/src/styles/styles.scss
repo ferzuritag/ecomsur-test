@@ -1,9 +1,9 @@
 @import "./ui/navbar";
 @import "./components/product-list";
-@import "./screens/product-list-page";
-@import "./screens/product-display-page";
+@import "./pages/product-list-page";
+@import "./pages/product-display-page";
 @import "./components/cart-product-list";
-@import "./screens/cart-page";
+@import "./pages/cart-page";
 @import "./components/loading-screen";
 * {
   margin: 0;

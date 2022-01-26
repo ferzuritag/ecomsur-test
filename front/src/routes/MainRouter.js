@@ -18,6 +18,7 @@ export const MainRouter = () => {
             element={<ProductDisplayPage />}
           />
           <Route path="/products" element={<ProductListPage />} />
+          <Route path="*" element={<ProductListPage />} />
         </Routes>
       </Router>
     </div>

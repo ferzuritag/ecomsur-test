@@ -1,3 +1,5 @@
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
@@ -14,7 +16,8 @@ export const NavBar = () => {
           </li>
           <li>
             <Link to="/cart">
-              Cart({itemCount}) ${cartPrice}
+              <FontAwesomeIcon icon={faShoppingCart} /> Cart({itemCount}) $
+              {cartPrice}
             </Link>
           </li>
         </ul>

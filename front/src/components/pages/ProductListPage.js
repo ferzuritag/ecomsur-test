@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../redux/slices/productsSlice";
-import { LoadingScreen } from "../loadingScreen/LoadingScreen";
+import { LoadingScreen } from "../loading-screen/LoadingScreen";
 import { ProductList } from "../products-list/ProductList";
 
 export const ProductListPage = () => {
