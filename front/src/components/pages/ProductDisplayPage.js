@@ -27,43 +27,44 @@ export const ProductDisplayPage = () => {
   }
   return (
     <div className="full-wrapper product-display-page__wrapper">
-      <strong className="product-display-page__card">
+      <strong className="product-display-page__card card">
         <img
           className="product-display-page__card__image"
-          src={"http://192.168.1.5:5000/" + selectedProduct.image}
+          src={"http://localhost:5000" + selectedProduct.image}
           alt={selectedProduct.name}
         />
-
-        <h1 className="product-display-page__card__title">
-          {selectedProduct.name}
-        </h1>
-        <h2 className="product-display-page__card__subtitle">
-          Category: {selectedProduct.category}
-        </h2>
-        <h2 className="product-display-page__card__subtitle">
-          Brand: {selectedProduct.brand}
-        </h2>
-        <span>
+        <div>
+          <h1 className="product-display-page__card__title">
+            {selectedProduct.name}
+          </h1>
           <h2 className="product-display-page__card__subtitle">
-            Description: {selectedProduct.description}
+            Category: <span>{selectedProduct.category}</span>
           </h2>
-        </span>
-        <h2 className="product-display-page__card__subtitle">
-          Price: ${selectedProduct.price}
-        </h2>
-        <h2 className="product-display-page__card__subtitle">
-          Stock: {selectedProduct.countInStock}
-        </h2>
-        <span>
-          <h4>
-            Rating:
-            <StarsDisplay rating={selectedProduct.rating} />
+          <h2 className="product-display-page__card__subtitle">
+            Brand: <span>{selectedProduct.brand}</span>
+          </h2>
+          <span>
+            <h2 className="product-display-page__card__subtitle">
+              Description:
+              <span> {selectedProduct.description}</span>
+            </h2>
+          </span>
+          <h2 className="product-display-page__card__subtitle">
+            Price: <span>${selectedProduct.price}</span>
+          </h2>
+          <h2 className="product-display-page__card__subtitle">
+            Stock: <span>{selectedProduct.countInStock}</span>
+          </h2>
+          <span>
+            <h4>
+              Rating:
+              <StarsDisplay rating={selectedProduct.rating} />
+            </h4>
+          </span>
+          <h4 className="product-display-page__card__subtitle">
+            Number of Reviews: <span>{selectedProduct.numReviews}</span>
           </h4>
-        </span>
-        <span>
-          <h4>Number of Reviews: {selectedProduct.numReviews}</h4>
-        </span>
-
+        </div>
         {selectedProduct.countInStock === 0 ? (
           <button
             className="product-display-page__card__button btn-add-to-cart"

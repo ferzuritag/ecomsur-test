@@ -31,10 +31,10 @@ export const ProductListItem = ({
     });
   };
   return (
-    <li className="product_list__item">
+    <li className="product_list__item card">
       <img
         className="product_list__item__img"
-        src={"http://192.168.1.5:5000/" + image}
+        src={"http://localhost:5000" + image}
         alt={name}
       />
       <main>
@@ -49,7 +49,6 @@ export const ProductListItem = ({
           <h4>Stock: {countInStock}</h4>
         </span>
       </main>
-
       {countInStock === 0 ? (
         <button
           className="product_list__item__add-btn btn-add-to-cart"

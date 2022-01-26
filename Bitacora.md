@@ -1,10 +1,10 @@
-# Bitácora de prueba técnica Front-End
+# BITÁCORA DE PRUEBA TÉCNICA
 
-## Requerimientos mínimos
+## REQUERIMIENTOS MÍNIMOS
 
 - Node 14.15.0
 
-## Instalación
+## INSTALACIÓN
 
 Instalar API (backend) y la aplicacion React (front):
 
@@ -23,18 +23,22 @@ Esto correrá ambas aplicaciones (Express y CRA) al mismo tiempo.
 
 ## DEPENDENCIAS
 
-#### FontAwesome:
-Se utlilizó este conjunto de paquetes para extraer iconos, y hacer el display de estrellas de los productos.
-#### react-router-dom v6
-Se utilizó este paquete para asignar las rutas de nuestras pantallas.
-#### Redux React-Redux ReduxToolkit
- Se utilizaron estos paquetes para manejar el estado global de la aplicación y así
-  mantener el carrito de compras durante todas las pantallas, ademas se utilizó react-redux para
-  poder usar los hooks e integrarlo con react, también se usó el set de herramientas RTK que sirve
-  para potenciar el uso de redux ya que facilita su configuración, nos ayuda a poder configurar nuestros
-  reducers y actions en un solo archivo y evita el código repetitivo que hacemos con redux.
-#### SASS
- Se utilizó el preprocesador sass para poder seccionar nuestro css asi como agregar variables y usar sus funciones para colores.
+- ***font awesome:***
+se utlilizó este conjunto de paquetes para extraer iconos, y hacer el display de estrellas de los productos.
+- ***react-router-dom v6:***
+se utilizó este paquete para asignar las rutas de nuestras pantallas.
+- ***redux:***
+ se utilizó para manejar el estado global de la aplicación y así
+  mantener el carrito de compras durante todas las pantallas. 
+- ***react-redux:***
+se utilizó para
+  poder usar los hooks e integrarlo con react.
+- ***redux toolkit:***
+se utilizó el set de herramientas RTK ya que sirve
+  para potenciar el uso de redux porque facilita su configuración, nos ayuda a poder configurar nuestros
+  reducers y actions en un solo archivo, y evita el código repetitivo que hacemos con redux.
+- ***sass:***
+ se utilizó el preprocesador sass para poder seccionar nuestro css asi como agregar variables y usar sus funciones para colores.
 
 ## ESTRUCTURA DE LAS CARPETAS
 
@@ -69,7 +73,6 @@ Se utilizó este paquete para asignar las rutas de nuestras pantallas.
  - fetchProductByID: Realiza una petición asíncrona para recuperar un productos por ID y cambia el estado a su respectivo estado del fetching (cargando y no cargando).
 
  
-
 
 
 

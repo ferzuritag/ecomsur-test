@@ -8,17 +8,20 @@
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
-  padding: 10px;
   line-height: 1.5;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0px 1px 5px 0px rgba(51, 51, 51, 0.75);
+  div {
+    margin: 10px;
+  }
 }
 .product-display-page__card__title {
-  font-size: 1.2rem;
+  text-align: center;
+  font-size: 1rem;
 }
 .product-display-page__card__subtitle {
   font-size: 1rem;
+}
+.product-display-page__card__subtitle span {
+  font-weight: lighter;
 }
 .product-display-page__card__image {
   width: 100%;

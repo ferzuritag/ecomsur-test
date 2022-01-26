@@ -1,6 +1,7 @@
 import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 
 export const CartProductListItem = ({
@@ -19,15 +20,19 @@ export const CartProductListItem = ({
     remove(_id);
   };
   return (
-    <li className="cart-product-list__list__item " id={_id}>
+    <li className="cart-product-list__list__item card" id={_id}>
       <img
         className="cart-product-list__list__image"
-        src={"http://192.168.1.5:5000" + image}
+        src={"http://localhost:5000" + image}
         alt={name}
       />
       <span>
-        <h1 className="cart-product-list__list__title">{name}</h1>
-        <h2 className="cart-product-list__list__price">Price: ${price}</h2>
+        <Link to={`/products/${_id}`}>
+          <h1 className="cart-product-list__list__title">{name}</h1>
+        </Link>
+        <h2 className="cart-product-list__list__price">
+          Price: <span>${price}</span>
+        </h2>
         <span className="cart-product-list__list__amount-wrapper">
           <button
             className="cart-product-list__list__amount-wrapper__button"

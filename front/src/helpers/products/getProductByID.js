@@ -1,6 +1,6 @@
 export const getProductByID = async (productID) => {
   try {
-    const url = `${process.env.REACT_APP_API_URL}products/${productID}`;
+    const url = `http://localhost:5000/api/products/${productID}`;
     const resp = await fetch(url);
     const data = await resp.json();
     return data;
