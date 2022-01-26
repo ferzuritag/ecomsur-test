@@ -35,7 +35,7 @@ export const NavBar = () => {
           </ul>
         </nav>
       )}
-      <div class="navbar__burguer-menu-btn">
+      <div className="navbar__burguer-menu-btn">
         <FontAwesomeIcon
           icon={faBars}
           size="2x"
