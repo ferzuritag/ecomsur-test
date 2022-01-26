@@ -60,13 +60,13 @@ Se utilizó este paquete para asignar las rutas de nuestras pantallas.
   una alerta.
 
   
- - removePoduct: Elimina 1 elemento del carrito, si este tiene mas instancias, descuenta la cantidad 1 unidad, si el contador llega a 0 se remueve el producto del carrito 
+ - removePoduct: Elimina 1 elemento del carrito, si este tiene mas instancias, descuenta la cantidad 1 unidad, si el contador llega a 0 se remueve el producto del carrito.
 
  #### productSlice
- - fetchProducts: Realiza una petición asíncrona para recuperar todos los productos y cambia el estado a su respectivo estado del fetching (cargando y no cargando)
+ - fetchProducts: Realiza una petición asíncrona para recuperar todos los productos y cambia el estado a su respectivo estado del fetching (cargando y no cargando).
 
   
- - fetchProductByID: Realiza una petición asíncrona para recuperar un productos por ID y cambia el estado a su respectivo estado del fetching (cargando y no cargando)
+ - fetchProductByID: Realiza una petición asíncrona para recuperar un productos por ID y cambia el estado a su respectivo estado del fetching (cargando y no cargando).
 
  
 

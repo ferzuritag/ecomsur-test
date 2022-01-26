@@ -51,6 +51,9 @@ export const ProductDisplayPage = () => {
         <h2 className="product-display-page__card__subtitle">
           Price: ${selectedProduct.price}
         </h2>
+        <h2 className="product-display-page__card__subtitle">
+          Stock: {selectedProduct.countInStock}
+        </h2>
         <span>
           <h4>
             Rating:
