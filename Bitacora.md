@@ -15,11 +15,11 @@ Instalar API (backend) y la aplicacion React (front):
    `npm install`
 2. Navega al directorio `front` y vuelve a correr el comando:
    `npm install`
-3. Descomenta el archivo .env.examplevb rf, por defecto funcionara bien, pero si quieres verlo a traves de un celular en la red local averigua tu direccion IP y sustituyela por localhost.
+3. Renombrar el archivo .env.example a .env, por defecto funcionara bien, pero si quieres verlo a traves de un celular en la red local averigua tu direccion IP y sustituyela por localhost.
 
 4. Regresa al directorio root `cd ..`.
 
-La aplicación está compuesta de un servidor Express y una instalación básica de Create-React-App (CRA). Todo está configurado para correr con un solo comando
+La aplicación está compuesta de un servidor Express y una instalación básica de Create-React-App (CRA). Todo está configurado para correr con un solo comando.
 `npm run dev`
 Esto correrá ambas aplicaciones (Express y CRA) al mismo tiempo.
 
@@ -29,7 +29,7 @@ Esto correrá ambas aplicaciones (Express y CRA) al mismo tiempo.
 ### DEPENDENCIAS
 
 #### FontAwesome
-- Se utlilizaron estos paquetes para extraer iconos, y hacer el display de estrellas de los productos
+- Se utlilizaron estos paquetes para extraer iconos, y hacer el display de estrellas de los productos.
 #### react-router-dom v6
 Se utilizo este paquete para asignar las rutas de nuestras pantallas
 #### Redux React-Redux ReduxToolkit
@@ -39,28 +39,57 @@ Se utilizo este paquete para asignar las rutas de nuestras pantallas
   para potenciar el uso de redux ya que facilita su configuracion, nos ayuda a poder configurar nuestros
   reducers y actions en un solo archivo y evitar el codigo repetitivo que hacemos con redux.
 #### SASS
- Se utlizo el preprocesador sass para poder seccionar nuestro css
+ Se utlizo el preprocesador sass para poder seccionar nuestro css.
 
 ### ESTRUCTURA DEL PROYECTO
 
-- Dentro de la carpeta src se encuentra nuestro codigo fuente
+- Dentro de la carpeta src se encuentra nuestro codigo fuente.
 
   ## components
   En esta carpeta se encuentran todos nuestros componentes de react, dentro de esta se encuentra una 
   carpeta especial llamada pages, que mostrara las pantallas finales, las demas carpetas son componentes mas
-  peque~os
+  pequeños.
 
   ## helpers
-  Dentro de la carpeta helpers se encuentran funciones hechas por nosotros, sean de mera ayuda o llamadas a endpoints
+  Dentro de la carpeta helpers se encuentran funciones hechas por nosotros, sean de mera ayuda o llamadas a endpoints.
 
   ## hooks
 
-  Aqui se guardan todos los custom hooks
+  Aqui se guardan todos los custom hooks.
 
   ## redux
 
   En esta carpeta se hacen las configuraciones del store en donde estaran alojados los datos de nuestra aplicacion y las slices en donde gracias a RTK
-  estan configuradas las acciones junto con los reducers
+  estan configuradas las acciones junto con los reducers.
+
+  ## styles
+
+  En esta carpeta se encuentan todos nuestros partials y nuestro archivo principal de SASS, esta dividido entre estilos de las paginas (pages) , componentes, componentes UI y un archivo de configuracion de colores.
+
+### ACCIONES EN lOS REDUCERS
+
+#### cartSlice
+ - addPoduct
+
+  Agrega un producto al carrito, si ya hay una instancia de este producto agrega uno a su contador, si rebasa el stock, muestra
+  una alerta.
+
+  
+ - removePoduct 
+
+ Elimina 1 elemento del carrito, si este tiene mas instancias descuenta la cantidad 1 unidad, si el contador llega a 0 se remueve el producto del carrito 
+
+ #### productSlice
+ - fetchProducts
+
+  Realiza una peticion asincrona para recuperar todos los productos y cambia el estados a su respectivo estado del fetching (cargando y no cargando)
+
+  
+ - fetchProductByID 
+
+ Realiza una peticion asincrona para recuperar un productos por ID y cambia el estados a su respectivo estado del fetching (cargando y no cargando)
+
+ 
 
 
 
